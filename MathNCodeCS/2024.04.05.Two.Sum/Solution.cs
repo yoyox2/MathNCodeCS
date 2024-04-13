@@ -7,6 +7,24 @@ public class Solution
 {
     public int[] TwoSum(int[] nums, int target)
     {
-        throw new NotImplementedException();
+        //O(N)
+        Dictionary<int, int> dict = new Dictionary<int, int>();
+        for (int i = 0; i < nums.Length; i++)
+        {
+            int targetSubtractA = target - nums[i];
+            if (dict.ContainsKey(targetSubtractA))
+            {
+                return new int[] { dict[targetSubtractA], i };
+            }
+            else
+            {
+                if (!dict.ContainsKey(nums[i]))
+                {
+                    dict.Add(nums[i], i);
+                }
+            }
+
+        }
+        return null;
     }
 }
