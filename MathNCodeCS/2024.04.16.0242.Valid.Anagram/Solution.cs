@@ -7,6 +7,25 @@ public class Solution
 {
     public bool IsAnagram(string s, string t)
     {
-        throw new NotImplementedException();
+        if (s.Length != t.Length)
+        {
+            return false;
+        }
+
+        char[] sArray = s.ToCharArray();
+        char[] tArray = t.ToCharArray();
+
+        Array.Sort(sArray);
+        Array.Sort(tArray);
+
+        string sortedS = String.Join("", sArray);
+        string sortedT = String.Join("", tArray);
+
+        if (!sortedS.Equals(sortedT))
+        {
+            return false;
+        }
+
+        return true;
     }
 }
