@@ -11,12 +11,20 @@ public class Test
         get
         {
             yield return new TestCaseData(
+<<<<<<< HEAD
                 new char[][]
+=======
+                new[]
+>>>>>>> count-complete-tree-node
                 {
                     ['1', '1', '1', '1', '0'],
                     ['1', '1', '0', '1', '0'],
                     ['1', '1', '0', '0', '0'],
+<<<<<<< HEAD
                     ['0', '0', '0', '0', '0'],
+=======
+                    new[] { '0', '0', '0', '0', '0' },
+>>>>>>> count-complete-tree-node
                 },
                 1);
 
