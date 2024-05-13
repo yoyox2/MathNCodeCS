@@ -7,6 +7,24 @@ public class Solution
 {
     public int LengthOfLongestSubstring(string s)
     {
-        throw new NotImplementedException();
+        var bag = new HashSet<char>();
+        int maxWidth = 0;
+
+        int left = 0;
+        foreach (var currChar in s)
+        {
+            while (bag.Contains(currChar))
+            {
+                char x = s[left];
+                bag.Remove(x);
+                left++;
+            }
+
+            bag.Add(currChar);
+
+            maxWidth = Math.Max(maxWidth, bag.Count);
+        }
+
+        return maxWidth;
     }
 }
