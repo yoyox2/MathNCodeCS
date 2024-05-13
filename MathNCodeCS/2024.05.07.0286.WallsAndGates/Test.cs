@@ -46,7 +46,7 @@ public class Test
 
     [Test]
     [TestCaseSource(nameof(TestCases))]
-    public void AssertThis(int[][] rooms, int[][] expected)
+    public void AssertThis(int[][] rooms, int expected)
     {
         _solution.WallsAndGates(rooms);
         Assert.That(rooms, Is.EqualTo(expected));
